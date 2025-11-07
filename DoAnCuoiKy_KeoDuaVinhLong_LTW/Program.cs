@@ -6,17 +6,14 @@ using System.Windows.Forms;
 
 namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 {
-    internal static class Program
+    public partial class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NhanVien());
+            Application.Run(new FormNhanVien());
         }
     }
 }

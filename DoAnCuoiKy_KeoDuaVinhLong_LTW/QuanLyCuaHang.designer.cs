@@ -30,9 +30,9 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertNhanVien(fromNhanVien instance);
-    partial void UpdateNhanVien(fromNhanVien instance);
-    partial void DeleteNhanVien(fromNhanVien instance);
+    partial void InsertNhanVien(NhanVien instance);
+    partial void UpdateNhanVien(NhanVien instance);
+    partial void DeleteNhanVien(NhanVien instance);
     partial void InsertChiTietHoaDon(ChiTietHoaDon instance);
     partial void UpdateChiTietHoaDon(ChiTietHoaDon instance);
     partial void DeleteChiTietHoaDon(ChiTietHoaDon instance);
@@ -95,11 +95,11 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<fromNhanVien> NhanViens
+		public System.Data.Linq.Table<NhanVien> NhanViens
 		{
 			get
 			{
-				return this.GetTable<fromNhanVien>();
+				return this.GetTable<NhanVien>();
 			}
 		}
 		
@@ -185,7 +185,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhanVien")]
-	public partial class fromNhanVien : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class NhanVien : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -228,7 +228,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
     partial void OnMaQuyenChanged();
     #endregion
 		
-		public fromNhanVien()
+		public NhanVien()
 		{
 			this._PhieuNhapHangs = new EntitySet<PhieuNhapHang>(new Action<PhieuNhapHang>(this.attach_PhieuNhapHangs), new Action<PhieuNhapHang>(this.detach_PhieuNhapHangs));
 			this._PhanQuyen = default(EntityRef<PhanQuyen>);
@@ -1796,7 +1796,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 		
 		private string _TenQuyen;
 		
-		private EntitySet<fromNhanVien> _NhanViens;
+		private EntitySet<NhanVien> _NhanViens;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1810,7 +1810,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 		
 		public PhanQuyen()
 		{
-			this._NhanViens = new EntitySet<fromNhanVien>(new Action<fromNhanVien>(this.attach_NhanViens), new Action<fromNhanVien>(this.detach_NhanViens));
+			this._NhanViens = new EntitySet<NhanVien>(new Action<NhanVien>(this.attach_NhanViens), new Action<NhanVien>(this.detach_NhanViens));
 			OnCreated();
 		}
 		
@@ -1855,7 +1855,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhanQuyen_NhanVien", Storage="_NhanViens", ThisKey="MaQuyen", OtherKey="MaQuyen")]
-		public EntitySet<fromNhanVien> NhanViens
+		public EntitySet<NhanVien> NhanViens
 		{
 			get
 			{
@@ -1887,13 +1887,13 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 			}
 		}
 		
-		private void attach_NhanViens(fromNhanVien entity)
+		private void attach_NhanViens(NhanVien entity)
 		{
 			this.SendPropertyChanging();
 			entity.PhanQuyen = this;
 		}
 		
-		private void detach_NhanViens(fromNhanVien entity)
+		private void detach_NhanViens(NhanVien entity)
 		{
 			this.SendPropertyChanging();
 			entity.PhanQuyen = null;
@@ -1920,7 +1920,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 		
 		private EntityRef<NhaCungCap> _NhaCungCap;
 		
-		private EntityRef<fromNhanVien> _NhanVien;
+		private EntityRef<NhanVien> _NhanVien;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1942,7 +1942,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 		{
 			this._ChiTietThuNhaps = new EntitySet<ChiTietThuNhap>(new Action<ChiTietThuNhap>(this.attach_ChiTietThuNhaps), new Action<ChiTietThuNhap>(this.detach_ChiTietThuNhaps));
 			this._NhaCungCap = default(EntityRef<NhaCungCap>);
-			this._NhanVien = default(EntityRef<fromNhanVien>);
+			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
 		
@@ -2102,7 +2102,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_PhieuNhapHang", Storage="_NhanVien", ThisKey="MaNhanVien", OtherKey="MaNhanVien", IsForeignKey=true)]
-		public fromNhanVien NhanVien
+		public NhanVien NhanVien
 		{
 			get
 			{
@@ -2110,7 +2110,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
 			}
 			set
 			{
-				fromNhanVien previousValue = this._NhanVien.Entity;
+				NhanVien previousValue = this._NhanVien.Entity;
 				if (((previousValue != value) 
 							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
 				{
