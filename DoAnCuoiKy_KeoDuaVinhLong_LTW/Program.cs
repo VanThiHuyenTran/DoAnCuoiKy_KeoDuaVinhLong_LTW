@@ -16,7 +16,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new NhanVien());
         }
     }
 }
