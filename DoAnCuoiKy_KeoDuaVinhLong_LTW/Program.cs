@@ -13,7 +13,7 @@ namespace DoAnCuoiKy_KeoDuaVinhLong_LTW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormNhanVien());
+            Application.Run(new FormNhaCungCap());
         }
     }
 }
